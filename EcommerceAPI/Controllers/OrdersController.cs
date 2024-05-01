@@ -29,17 +29,7 @@ namespace EcommerceAPI.Controllers
             return CreatedAtAction(nameof(GetOrderById), new { id = order.OrderId }, order);
         }
 
-        // Retrieve detailed information about a specific order by OrderID
-        [HttpGet("{orderId}")]
-        public async Task<ActionResult<Order>> GetOrderById(int orderId)
-        {
-            var order = await _context.Orders.FindAsync(orderId);
-            if (order == null)
-            {
-                return NotFound("Order not found.");
-            }
-            return order;
-        }
+       
 
 
 
